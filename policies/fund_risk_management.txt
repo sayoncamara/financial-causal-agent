@@ -1,0 +1,35 @@
+FUND RISK MANAGEMENT AND REDEMPTION POLICY
+
+Client Risk Assessment Framework:
+Client risk appetite is assessed on a scale of 0-100, incorporating:
+- Credit spread environment: Widening spreads signal elevated default risk,
+  reducing recommended equity allocation by 5-10 percentage points per
+  100bp spread widening.
+- Employment conditions: Rising unemployment erodes household financial
+  security, shifting risk preferences toward capital preservation.
+- Market volatility: VIX-equivalent readings above 25 trigger automatic
+  portfolio rebalancing toward defensive positions.
+
+Redemption Risk Management:
+Fund managers must maintain liquidity buffers of 5-10% of AUM to handle
+redemption requests without forced asset sales. During stress periods,
+redemption gates may be activated if daily outflows exceed 5% of NAV.
+
+Outflow Triggers and Thresholds:
+Historical analysis shows the following outflow acceleration triggers:
+- Bond price index decline > 3%: triggers retail redemptions
+- Credit spread widening > 50bp in one month: triggers institutional outflows
+- Client risk score falling below 40: triggers automatic portfolio de-risking
+- Consecutive monthly losses > 3 months: triggers panic-driven redemptions
+
+Inflow Drivers:
+Fund inflows are primarily driven by:
+- Positive equity returns: Each 1% monthly return generates approximately
+  EUR 4-6 million in net inflows for a medium-sized UCITS fund
+- Declining interest rates: Investors seek yield in equity and credit funds
+- Improving employment data: Higher consumer confidence drives investment
+
+Regulatory Requirements (UCITS):
+Luxembourg-domiciled UCITS funds must comply with CSSF requirements for
+liquidity risk management, including daily redemption capability and
+stress testing of redemption scenarios under adverse market conditions.

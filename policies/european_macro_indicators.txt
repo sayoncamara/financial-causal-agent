@@ -1,0 +1,41 @@
+EUROPEAN MACROECONOMIC INDICATORS AND FINANCIAL IMPACT
+
+Inflation and Central Bank Response:
+Eurozone inflation is measured by HICP (Harmonised Index of Consumer Prices).
+The ECB's price stability mandate targets inflation near 2% over the medium
+term. Persistent inflation above 3% typically triggers rate hike cycles.
+The 2022 inflation shock saw HICP reach 10.6%, prompting the fastest
+tightening cycle in ECB history (450bp in 14 months).
+
+Unemployment and Consumer Behavior:
+The eurozone unemployment rate directly affects household financial decisions.
+Research shows that each 1 percentage point increase in unemployment:
+- Reduces new fund subscriptions by approximately 8%
+- Shifts existing allocations toward lower-risk categories
+- Increases redemption rates in equity funds by 3-5%
+
+The unemployment-risk appetite channel is particularly strong in
+peripheral eurozone economies (Spain, Italy, Greece) where employment
+volatility is higher.
+
+Credit Spreads as Risk Indicators:
+The iTraxx Europe Main index tracks investment-grade credit spreads.
+Spread levels serve as a barometer of financial market stress:
+- Below 60bp: Low risk environment, supportive of risk-taking
+- 60-100bp: Moderate risk, standard allocation frameworks apply
+- 100-150bp: Elevated risk, defensive positioning recommended
+- Above 150bp: Stress conditions, potential systemic risk
+
+Cross-Asset Correlation During Stress:
+During market stress events, traditional diversification breaks down.
+Bond-equity correlations turn positive during rate hiking cycles,
+meaning both asset classes decline simultaneously. This amplifies
+fund outflows as investors find no safe haven within traditional
+fund structures.
+
+Luxembourg Fund Industry Context:
+Luxembourg is the largest UCITS fund domicile in Europe, with over
+EUR 5 trillion in assets under management. The industry is particularly
+sensitive to ECB policy changes due to the high concentration of
+fixed-income and multi-asset funds. The CSSF monitors systemic
+liquidity risk across the industry through quarterly stress tests.

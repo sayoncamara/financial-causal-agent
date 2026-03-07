@@ -1,0 +1,35 @@
+ECB MONETARY POLICY AND FUND FLOW DYNAMICS
+
+The European Central Bank (ECB) sets the main refinancing rate as its primary
+monetary policy tool. Rate increases are deployed when eurozone inflation
+exceeds the 2% target. Historical data shows that tightening cycles typically
+trigger significant capital reallocation across European fund markets.
+
+Rate Transmission to Bond Markets:
+When the ECB raises rates, fixed-income securities experience price declines
+proportional to their duration. A 100 basis point rate increase typically
+causes a 4-6% decline in the eurozone government bond index. Funds holding
+longer-duration bonds are disproportionately affected.
+
+Impact on Fund Flows:
+During the 2022-2023 tightening cycle, European UCITS bond funds experienced
+net outflows of EUR 200 billion. Retail investors tend to redeem positions
+when NAV declines exceed 5%, creating a self-reinforcing cycle of
+redemptions and forced selling.
+
+Rate Transmission to Credit Markets:
+Rate hikes widen corporate credit spreads as borrowing costs increase.
+Investment-grade credit spreads typically widen by 20-40 basis points per
+100bp rate hike. High-yield spreads are more sensitive, widening by
+50-80 basis points.
+
+Equity Market Effects:
+Higher interest rates reduce equity valuations through the discount rate
+channel. The STOXX Europe 600 has historically declined 8-12% during
+sustained tightening cycles. Growth stocks with distant cash flows are
+most affected.
+
+Forward Guidance:
+The ECB's communication strategy significantly influences market expectations.
+Hawkish forward guidance can cause market repricing before actual rate changes,
+front-loading the impact on fund flows.
