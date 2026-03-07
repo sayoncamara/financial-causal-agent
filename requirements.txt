@@ -16,17 +16,15 @@ faiss-cpu
 
 # === LLM ===
 openai<2.0.0
+python-dotenv
+tiktoken
 
-# === API & Frontend ===
-fastapi
-uvicorn[standard]
+# === Frontend ===
 streamlit
-
-# === Database (enable when Azure PostgreSQL is ready) ===
-psycopg2-binary
 
 # === Visualization & Data ===
 pandas
 numpy
 networkx
 matplotlib
+
