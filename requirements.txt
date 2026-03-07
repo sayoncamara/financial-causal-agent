@@ -1,0 +1,32 @@
+# === Core Agent ===
+langchain==0.3.25
+langchain-core==0.3.60
+langchain-community==0.3.24
+langchain-openai==0.3.17
+langchain-text-splitters==0.3.8
+langsmith==0.3.42
+langgraph==0.2.60
+
+# === Causal Inference ===
+dowhy
+causal-learn
+
+# === RAG ===
+faiss-cpu
+
+# === LLM ===
+openai<2.0.0
+
+# === API & Frontend ===
+fastapi
+uvicorn[standard]
+streamlit
+
+# === Database (enable when Azure PostgreSQL is ready) ===
+psycopg2-binary
+
+# === Visualization & Data ===
+pandas
+numpy
+networkx
+matplotlib
