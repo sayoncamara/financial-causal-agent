@@ -106,25 +106,29 @@ def run_causal_analysis(
     )
     
     # Extract results
-    causal_effect = float(estimate.value)
+    causal_effect = float(np.asarray(estimate.value).item())
     
     # Get p-value and confidence interval safely
+    # Note: on Python 3.14+ / newer numpy, DoWhy may return numpy arrays
+    # instead of plain floats, so we use np.asarray().item() throughout.
     p_value = None
     if hasattr(estimate, "test_stat_significance") and estimate.test_stat_significance():
         sig = estimate.test_stat_significance()
         if isinstance(sig, dict) and "p_value" in sig:
-            p_value = float(sig["p_value"])
+            p_value = float(np.asarray(sig["p_value"]).item())
         elif isinstance(sig, (list, tuple)) and len(sig) > 0:
-            p_value = float(sig[0])
+            p_value = float(np.asarray(sig[0]).item())
     
     ci_low, ci_high = None, None
     if hasattr(estimate, "get_confidence_intervals"):
         try:
             ci = estimate.get_confidence_intervals()
-            if ci is not None and len(ci) >= 2:
-                ci_low, ci_high = float(ci[0]), float(ci[1])
-            elif ci is not None and hasattr(ci, "shape") and ci.shape[0] >= 1:
-                ci_low, ci_high = float(ci[0][0]), float(ci[0][1])
+            if ci is not None:
+                ci_arr = np.asarray(ci)
+                if ci_arr.ndim == 1 and len(ci_arr) >= 2:
+                    ci_low, ci_high = float(ci_arr[0].item()), float(ci_arr[1].item())
+                elif ci_arr.ndim == 2 and ci_arr.shape[0] >= 1:
+                    ci_low, ci_high = float(ci_arr[0][0].item()), float(ci_arr[0][1].item())
         except Exception:
             pass
     
@@ -141,11 +145,12 @@ def run_causal_analysis(
             placebo_type="permute",
             num_simulations=50,
         )
-        placebo_passed = abs(float(placebo.new_effect)) < abs(causal_effect) * 0.3
+        placebo_effect = float(np.asarray(placebo.new_effect).item())
+        placebo_passed = abs(placebo_effect) < abs(causal_effect) * 0.3
         refutation_results.append({
             "test": "Placebo Treatment",
             "description": "Replace treatment with random noise — effect should vanish",
-            "placebo_effect": round(float(placebo.new_effect), 4),
+            "placebo_effect": round(placebo_effect, 4),
             "original_effect": round(causal_effect, 4),
             "passed": placebo_passed,
         })
@@ -166,12 +171,13 @@ def run_causal_analysis(
             method_name="random_common_cause",
             num_simulations=50,
         )
-        effect_change = abs(float(random_cause.new_effect) - causal_effect)
+        new_effect = float(np.asarray(random_cause.new_effect).item())
+        effect_change = abs(new_effect - causal_effect)
         random_passed = effect_change < abs(causal_effect) * 0.15
         refutation_results.append({
             "test": "Random Common Cause",
             "description": "Add a random confounder — effect should barely change",
-            "new_effect": round(float(random_cause.new_effect), 4),
+            "new_effect": round(new_effect, 4),
             "original_effect": round(causal_effect, 4),
             "effect_change": round(effect_change, 4),
             "passed": random_passed,
@@ -280,3 +286,4 @@ if __name__ == "__main__":
     print("\n" + "=" * 60)
     print("TEST COMPLETE")
     print("=" * 60)
+
