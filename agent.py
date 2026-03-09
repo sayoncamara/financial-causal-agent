@@ -146,6 +146,8 @@ def analyze_causal_effect(treatment: str, outcome: str) -> str:
         return output
     
     except Exception as e:
+        import traceback
+        traceback.print_exc()
         return f"Error in causal analysis: {str(e)}"
 
 
@@ -186,8 +188,9 @@ def discover_causal_structure(
         return output
     
     except Exception as e:
-        return f"Error in causal discovery: {str(e)}"
-
+        import traceback
+        traceback.print_exc()
+        return f"Error in causal analysis: {str(e)}"
 
 @tool
 def search_financial_policies(query: str) -> str:
