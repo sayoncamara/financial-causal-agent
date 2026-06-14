@@ -296,7 +296,7 @@ financial-causal-agent/
 ## 🧪 Evaluation
 
 Because the data is generated from a **known causal DAG with known effect sizes**
-(`data/generate_data.py`), the system is scored against ground truth — not vibes.
+(`data/generate_data.py`), the system is scored against ground truth .
 Reproduce with `python evaluate.py` (causal) and `python evaluate_rag.py` (RAG).
 
 ### Causal Estimation — estimate vs. true effect
@@ -344,8 +344,8 @@ the domain DAG, not the discovered graph.** Discovery is a measured cross-check,
 These confirm the pipeline is sound — correct document retrieved, every answer grounded in
 context, out-of-scope questions refused. They are **not** presented as robustness: with only
 three policy documents and obvious negatives, this is a sanity-level eval. The next step is an
-adversarial suite — near-miss out-of-scope queries, multi-hop questions, and partially-supported
-answers — where faithfulness and abstention would actually be stressed.
+adversarial suite  near-miss out-of-scope queries, multi-hop questions, and partially-supported
+answers  where faithfulness and abstention would actually be stressed.
 
 ---
 ## 👤 Author
