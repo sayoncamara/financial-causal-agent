@@ -293,7 +293,61 @@ financial-causal-agent/
 - [ ] **Multi-market support** — extend beyond Eurozone to Fed, BoE, BoJ
 
 ---
+## 🧪 Evaluation
 
+Because the data is generated from a **known causal DAG with known effect sizes**
+(`data/generate_data.py`), the system is scored against ground truth — not vibes.
+Reproduce with `python evaluate.py` (causal) and `python evaluate_rag.py` (RAG).
+
+### Causal Estimation — estimate vs. true effect
+
+| Treatment → Outcome | True | Estimated | Within 30% | Refutation |
+|---|---:|---:|:---:|:---:|
+| inflation_rate → ecb_rate | 0.4 | 0.27 | ❌ | ✅ |
+| ecb_rate → bond_price_index | -5.0 | -5.30 | ✅ | ✅ |
+| ecb_rate → equity_returns | -2.0 | -0.99 | ❌ | ✅ |
+| ecb_rate → credit_spread | 0.3 | 0.28 | ✅ | ✅ |
+| credit_spread → client_risk_score | -10.0 | -7.44 | ✅ | ✅ |
+| unemployment_rate → client_risk_score | -3.0 | -0.40 | ❌ | ❌ |
+| bond_price_index → fund_outflows | -2.0 | -1.87 | ✅ | ✅ |
+| client_risk_score → fund_outflows | -0.5 | -0.41 | ✅ | ✅ |
+| equity_returns → fund_inflows | 5.0 | 4.84 | ✅ | ✅ |
+
+**Mean absolute error 0.78 · 6/9 within 30% tolerance · 8/9 pass refutation.**
+
+The one edge that fails refutation (`unemployment_rate → client_risk_score`) is also the
+worst-recovered estimate — the **deterministic trust gate refuses to vouch for the system's
+least reliable claim** rather than reporting it as fact.
+
+### Causal Discovery — PC algorithm vs. true DAG
+
+| Metric | Score |
+|---|---:|
+| Precision | 50.0% |
+| Recall | 11.1% |
+| F1 | 18.2% |
+
+PC recovers most of the **skeleton**, but observational data can't orient most edges without
+further assumptions (the output is a CPDAG). Under strict directed-edge scoring, unoriented
+edges count as misses, so recall is conservative — which is exactly why **estimation runs on
+the domain DAG, not the discovered graph.** Discovery is a measured cross-check, not a crutch.
+
+### RAG Layer — retrieval, faithfulness, abstention
+
+| Metric | Score |
+|---|---:|
+| Retrieval Hit@1 | 1.00 |
+| MRR | 1.00 |
+| Mean faithfulness | 1.00 |
+| Abstention (out-of-scope) | 1.00 |
+
+These confirm the pipeline is sound — correct document retrieved, every answer grounded in
+context, out-of-scope questions refused. They are **not** presented as robustness: with only
+three policy documents and obvious negatives, this is a sanity-level eval. The next step is an
+adversarial suite — near-miss out-of-scope queries, multi-hop questions, and partially-supported
+answers — where faithfulness and abstention would actually be stressed.
+
+---
 ## 👤 Author
 
 | |
