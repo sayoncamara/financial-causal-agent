@@ -32,7 +32,7 @@ This agent separates the two concerns:
 - **🧮 DoWhy computes** — real statistical causal inference with robustness checks
 - **🗣️ LLM explains** — natural language synthesis of validated results
 
-This design decision is backed by [Han et al. (2024)](https://arxiv.org/abs/2305.00050) on the limitations of LLMs for causal reasoning.
+
 
 ---
 
@@ -136,7 +136,7 @@ graph LR
 
 | Decision | Why |
 |----------|-----|
-| **DoWhy computes, LLM explains** | LLMs hallucinate causal claims ([Han et al., 2024](https://arxiv.org/abs/2305.00050)). We separate computation from explanation. |
+|
 | **Refutation tests visible** | Placebo treatment + random common cause tests shown to user — this is what separates rigorous analysis from toy demos. |
 | **PC algorithm for discovery** | Cross-sectional causal discovery complements the domain DAG. Transfer entropy explored but insufficient data (120 months) — documented honestly. |
 | **Credit spread as mediator** | Monetary policy transmission mechanism literature supports this causal pathway. |
